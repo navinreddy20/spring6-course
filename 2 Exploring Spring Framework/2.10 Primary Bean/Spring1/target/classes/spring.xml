@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--	<bean id="alien1" class="com.telusko.Alien" scope="singleton">  -->
+	
+<!--	<bean id="alien1" class="com.telusko.Alien" autowire="byName"> -->
+	<bean id="alien1" class="com.telusko.Alien" autowire="byType"> 
+	
+		<property name="age" value="21"/>		
+ 	<property name="com" ref="com2"/>  
+<!--		<property name="lap" ref="lap1"/> -->
+
+
+<!--		<constructor-arg value="21"></constructor-arg>
+		<constructor-arg ref="lap1"></constructor-arg> -->
+		
+<!--		<constructor-arg type="com.telusko.Laptop" ref="lap1"/>
+		<constructor-arg type="int" value="21"/> -->
+		
+<!--		<constructor-arg index="1" ref="lap1"/>
+		<constructor-arg index="0" value="21"/> -->
+		
+<!--		<constructor-arg name="lap" ref="lap1"/>
+		<constructor-arg name="age" value="21"/> -->
+		
+		
+	</bean>
+	
+
+	<bean id="com1" class="com.telusko.Laptop" primary="true">
+	</bean> 
+	
+	<bean id="com2" class="com.telusko.Desktop">
+	</bean>
+	
+</beans>
