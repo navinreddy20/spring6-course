@@ -1,0 +1,28 @@
+body {
+            background-color: #007bff;
+        }
+
+        .oval-box-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .oval-box {
+            position: relative;
+            width: 300px; /* Adjusted width */
+            height: 200px; /* Adjusted height */
+            background-color: #71816d;
+            border-radius: 50%;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .oval-box:hover {
+            background-color: #0056b3;
+        }
