@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "postProfile":"Java Developer",
+      "postDesc":"should be good",
+      "reqExperience":5,
+      "postTechStack":[
+        "Java",
+        "Js",
+        "Ts"
+      ]
+    },
+    {
+      "id": 1,
+      "postProfile":"Ts Developer",
+      "postDesc":"should be good",
+      "reqExperience":5,
+      "postTechStack":[
+        "Java",
+        "Js",
+        "Ts"
+      ]
+    },
+    {
+      "id": 2,
+      "postProfile":"Js Developer",
+      "postDesc":"should be good",
+      "reqExperience":5,
+      "postTechStack":[
+        "Java",
+        "Js",
+        "Ts"
+      ]
+    }
+  ]
+
+
+}
