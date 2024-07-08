@@ -12,7 +12,7 @@ import com.telusko.JobApp.model.JobPost;
 public class JobRepo {
 
 	// arrayList to store store JobPost objects
-	List<JobPost> jobs = new ArrayList<>();
+	private List<JobPost> jobs = new ArrayList<>();
 
 	// ****************************************************************************
 
