@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.telusko.springbootrest.model.JobPost;
 import com.telusko.springbootrest.service.JobService;
 
-@RestController	
+@RestController
+@CrossOrigin
 public class JobRestController {
 	
 	@Autowired
