@@ -97,7 +97,7 @@ public class JobRepo {
 		for (JobPost jobPost : jobs) {
 			if (jobPost.getPostId() == postId) {
 				jobs.remove(jobPost);
-				
+				break; // Eliminate chance of ConcurrentException
 			}
 		}
 
