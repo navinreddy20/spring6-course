@@ -2,6 +2,7 @@ package com.telusko.springecom.controller;
 
 import com.telusko.springecom.model.Product;
 import com.telusko.springecom.service.ProductService;
+import jakarta.annotation.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,7 +47,7 @@ public class ProductController {
 
 
     @PostMapping("/product")
-    public ResponseEntity<?> addProduct(@RequestPart Product product, @RequestPart MultipartFile imageFile) {
+    public ResponseEntity<?> addProduct(@RequestPart Product product, @RequestPart @Nullable MultipartFile imageFile) {
         Product savedProduct = null;
         try {
             savedProduct = productService.addOrUpdateProduct(product, imageFile);
