@@ -43,12 +43,10 @@ const CheckoutPopup = ({ show, handleClose, cartItems, totalPrice }) => {
       const response = await axios.post(`${baseUrl}/api/orders/place`, data);
       console.log(response, 'order placed');
 
-      // Show success notification
       setToastVariant('success');
       setToastMessage('Order placed successfully!');
       setShowToast(true);
 
-      // Clear cart and redirect after a short delay
       localStorage.removeItem('cart');
       setTimeout(() => {
         navigate('/');
@@ -62,22 +60,7 @@ const CheckoutPopup = ({ show, handleClose, cartItems, totalPrice }) => {
       setIsSubmitting(false);
     }
   };
-  const convertBase64ToDataURL = (base64String, mimeType = 'image/jpeg') => {
-    if (!base64String) return unplugged; // Return fallback image if no data
 
-    // If it's already a data URL, return as is
-    if (base64String.startsWith('data:')) {
-      return base64String;
-    }
-
-    // If it's already a URL, return as is
-    if (base64String.startsWith('http')) {
-      return base64String;
-    }
-
-    // Convert base64 string to data URL
-    return `data:${mimeType};base64,${base64String}`;
-  };
   return (
     <>
       <Modal show={show} onHide={handleClose} centered>
@@ -90,7 +73,7 @@ const CheckoutPopup = ({ show, handleClose, cartItems, totalPrice }) => {
               {cartItems.map((item) => (
                 <div key={item.id} className="d-flex mb-3 border-bottom pb-3">
                   <img
-                    src={convertBase64ToDataURL(item.imageData)}
+                    src={`${baseUrl}/api/product/${item.id}/image`}
                     alt={item.name}
                     className="me-3 rounded"
                     style={{ width: '80px', height: '80px', objectFit: 'cover' }}
@@ -152,7 +135,6 @@ const CheckoutPopup = ({ show, handleClose, cartItems, totalPrice }) => {
         </Form>
       </Modal>
 
-      {/* Toast notification */}
       <ToastContainer position="top-end" className="p-3" style={{ zIndex: 1070 }}>
         <Toast
           show={showToast}
